@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ass2</title>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script 
+    src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone@7.22.15/babel.min.js" crossorigin></script>
+</head>
+  <body>
+    <p></p>I like smiles :)</p>
+    <div id="monApplication"></div>
+    <script type="text/babel">
+      "use strict";
+      function ListeDeProject(props) {
+      console.log(props);
+        return (
+          <div>
+<ol>
+  {
+    props.list.map(
+      (object,num) => (
+        <li key={num}>
+          <a>
+            {object.color}
+          </a>
+          <a> 
+            {" "}
+            {object.item}
+          </a>
+        </li>
+      )
+    )
+  }
+</ol>
+          </div>
+        );
+      }
+
+      $.getJSON(
+        'Je va a apprendre francais et tu?',
+        function(JsonDepuiJquery){
+          const monRacine = ReactDOM.createRoot( document.getElementById('monApplication') );
+          monRacine.render(
+            <ListeDeProject list={JsonDepuiJquery} />
+          );
+        }
+      );
+    </script>
+  </body>
+</html>

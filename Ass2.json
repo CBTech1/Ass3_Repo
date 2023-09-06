@@ -1,0 +1,14 @@
+[
+  {
+    "color":"blue",
+    "item":"pencil"
+  },
+  {
+     "color":"red",
+    "item":"marker"
+  },
+  {
+     "color":"green",
+    "item":"eraser"
+  }
+]
